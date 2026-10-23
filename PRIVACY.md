@@ -16,7 +16,7 @@ When a tool runs, the plugin sends only the input text of that call to the Finch
 
 Nothing else is sent: no Dify user ID, conversation history, files, or credentials.
 
-The catalog endpoint is a stateless service hosted on Cloudflare Workers. It does not store requests. To answer `search_finch_agents`, it forwards the `query` text to Finch's public marketplace search API (`https://www.finchtech.ai/api/market/search`). Task text is truncated to 300 characters and is not forwarded. Cloudflare and Finch may keep standard request logs under their own privacy policies.
+The catalog endpoint is a service hosted on Cloudflare Workers. It does not store request content; it keeps only anonymous daily counts of which tool was called and the caller's client type (from the User-Agent), deleted after 120 days. To answer `search_finch_agents`, it forwards the `query` text to Finch's public marketplace search API (`https://www.finchtech.ai/api/market/search`). Task text is truncated to 300 characters and is not forwarded. Cloudflare and Finch may keep standard request logs under their own privacy policies.
 
 The task text is echoed back in the response so it can be pasted into a Finch agent. Do not put private documents, personal data, secrets, private keys or seed phrases in `query` or `task`.
 
@@ -26,4 +26,4 @@ Responses contain only public catalog information: agent names, official descrip
 
 ## Contact
 
-Questions: https://github.com/a0971025732-netizen/finch-dify-plugin/issues
+Questions: https://github.com/a0971025732-netizen/finch-dify-plugin/issues or enid@finchtech.ai

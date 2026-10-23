@@ -33,7 +33,7 @@ network:
     - finch-agent-catalog.finch-catalog-mcp.workers.dev
 privacy: PRIVACY.md
 repo: https://github.com/a0971025732-netizen/finch-dify-plugin
-contact: a0971025732-netizen@users.noreply.github.com
+contact: enid@finchtech.ai
 tags:
   - search
   - productivity
