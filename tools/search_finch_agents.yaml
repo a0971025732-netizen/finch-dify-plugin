@@ -1,0 +1,34 @@
+identity:
+  name: search_finch_agents
+  author: a0971025732-netizen
+  label:
+    en_US: Search Finch Agents
+description:
+  human:
+    en_US: "Search Finch's public marketplace catalog of third-party AI agents by task (for example 'trace stolen crypto', 'covered call', 'tailor resume'). Returns each agent's official summary, price, live free-run info and run link."
+  llm: "Search the Finch marketplace of third-party AI agents by task (e.g. 'trace stolen crypto', 'wallet risk', 'covered call', 'tailor resume', 'Singapore condo'). Returns each agent's slug, official summary, price, free runs and a run link. Use get_finch_agent with a slug for the full description."
+parameters:
+  - name: query
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Query
+    human_description:
+      en_US: "What you need done. Leave empty to list all agents."
+    llm_description: "What the user needs done, as a short task phrase. Empty returns all agents. Do not include private data or secrets."
+  - name: limit
+    type: number
+    required: false
+    default: 5
+    min: 1
+    max: 14
+    form: form
+    label:
+      en_US: Max results
+    human_description:
+      en_US: "Maximum number of agents to return (1-14)."
+    llm_description: "Maximum number of agents to return, 1 to 14."
+extra:
+  python:
+    source: tools/search_finch_agents.py

@@ -1,0 +1,22 @@
+identity:
+  author: a0971025732-netizen
+  name: finch_agent_catalog
+  label:
+    en_US: Finch Agent Catalog
+  description:
+    en_US: Search Finch's public catalog of third-party AI agents and get each agent's official description, price, live free-run info and run link. Read-only, no credentials.
+  icon: icon.svg
+  tags:
+    - search
+    - productivity
+    - business
+tools:
+  - tools/search_finch_agents.yaml
+  - tools/get_finch_agent.yaml
+  - tools/trace_crypto_funds.yaml
+  - tools/analyze_hyperliquid_us_stock_perp.yaml
+  - tools/screen_wheel_strategy_options.yaml
+  - tools/tailor_resume_to_job.yaml
+extra:
+  python:
+    source: provider/finch_agent_catalog.py

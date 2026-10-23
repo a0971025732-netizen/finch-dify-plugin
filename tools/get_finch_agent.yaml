@@ -1,0 +1,22 @@
+identity:
+  name: get_finch_agent
+  author: a0971025732-netizen
+  label:
+    en_US: Get Finch Agent
+description:
+  human:
+    en_US: "Get the full official description, price, live free-run info and run link of one Finch agent by its slug (from Search Finch Agents)."
+  llm: "Get the full official description, price, free runs and run link of one Finch agent by its slug, as returned by search_finch_agents."
+parameters:
+  - name: slug
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Agent slug
+    human_description:
+      en_US: "The agent slug returned by Search Finch Agents, e.g. agent-3dcaa57f-b8b8-5c78-9300-c972e5a764bc."
+    llm_description: "The agent slug from a search_finch_agents result."
+extra:
+  python:
+    source: tools/get_finch_agent.py

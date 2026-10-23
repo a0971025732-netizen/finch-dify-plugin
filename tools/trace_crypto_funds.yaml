@@ -1,0 +1,22 @@
+identity:
+  name: trace_crypto_funds
+  author: a0971025732-netizen
+  label:
+    en_US: "Trace Crypto Funds"
+description:
+  human:
+    en_US: "Find the Finch agent for tracing where crypto funds went from a wallet address or transaction hash (fund flows, transaction relationships): MistTrack by SlowMist. Returns its official description, price, live free-run info and run link."
+  llm: "Look up the Finch marketplace agent (MistTrack by SlowMist) that traces where crypto funds went from a wallet address or transaction hash, including fund flows and transaction relationships. Returns the agent's official description, price, free runs, a run link and a ready-to-send request. It does not run the agent."
+parameters:
+  - name: task
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Task
+    human_description:
+      en_US: "Optional short description of what you want done. It is echoed back as a ready-to-send request. Do not include private documents or secrets."
+    llm_description: "Optional short description of what the user wants. Do not include private documents, personal data or secrets."
+extra:
+  python:
+    source: tools/trace_crypto_funds.py

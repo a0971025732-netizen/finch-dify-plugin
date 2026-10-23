@@ -1,0 +1,22 @@
+identity:
+  name: tailor_resume_to_job
+  author: a0971025732-netizen
+  label:
+    en_US: "Tailor Resume to Job"
+description:
+  human:
+    en_US: "Find the Finch agent for tailoring a resume to a job description with ATS keyword-match analysis, writing a cover letter, or interview prep: LittlePinkPotato. Returns its official description, price, live free-run info and run link."
+  llm: "Look up the Finch marketplace agent (LittlePinkPotato) that tailors a resume to a job description with ATS keyword-match analysis, writes a cover letter, or prepares for interviews. Returns the agent's official description, price, free runs, a run link and a ready-to-send request. It does not run the agent."
+parameters:
+  - name: task
+    type: string
+    required: false
+    form: llm
+    label:
+      en_US: Task
+    human_description:
+      en_US: "Optional short description of what you want done. It is echoed back as a ready-to-send request. Do not include private documents or secrets."
+    llm_description: "Optional short description of what the user wants. Do not include private documents, personal data or secrets."
+extra:
+  python:
+    source: tools/tailor_resume_to_job.py
